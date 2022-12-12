@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const path = require("path");
+const cors = require("cors");
 
 
 const userRoute = require("./routes/userRoute");
@@ -18,6 +19,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors({
+    origin: ["http://localhost:3000", "http://localhost:3001"],
+    credentials: true,
+}))
 app.use("/uploads", express.static(path.join(__dirname, "uploads")))
 
 //Routes Middlewares
