@@ -1,0 +1,23 @@
+
+GET http://localhost:5000/
+Content-Type: application/json
+
+
+
+###
+POST http://localhost:5000/api/users/register
+
+{
+    "email": "bmp@gmail.com",
+    "name": "mugundhan",
+    "password": "mugu1234",
+
+}
+
+
+
+###
+POST http://localhost:5000/api/moments/moments
+Content-Type: application/json
+
+
